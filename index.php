@@ -1,14 +1,28 @@
 <html>
-<title>Golden Agerh</title>
+<title>Golden Ager</title>
 <head>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
    <style>
        .news_events p
        {
            font-weight:bold;
        }
+       #an1{
+           display:none;
+       }
+       </style>
+       <script>
+    
+       #an:hover + .hide {
+       display: block;
+       color: red;
+}
+      </script>
        
 
-   </style>
+   
    <link rel="stylesheet" type="text/css" href="index.css">
    <link rel="shortcut icon" href="img/chase.jpg">
     </head>
@@ -50,12 +64,13 @@
     <div class="online_services">
         <h4>Online Services</h4>
         <ul>
-            <a href="customer_reg_form.php"><li>Open Account</li></a>
+            <a href="customer_reg_form.php" id="an"><li>Open Account</li></a>
             <a href="debit_card_form.php"><li>Apply Debit Card</li></a><br>
             <a href="#" id="ebanking" ><li><div class="ebanking">Edit Account
                 <div class = "ebanking_options">
                 <ul>
                     <a href="customer_login.php"><li>Login </li></a>
+                    <a href="#"><li>Log</li>
                     <a href="ebanking_reg_form.php"><li>Register</li></a>
                 </ul>
             </div>
@@ -78,6 +93,9 @@
         
 
 
+    </div>
+    <div id="an1">
+        <p>bxjkencencvhrh</p>
     </div>
     
 <?php include 'footer.php';?>
