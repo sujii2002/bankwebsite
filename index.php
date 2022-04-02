@@ -1,104 +1,86 @@
+<!DOCTYPE html>
 <html>
-<title>Golden Ager</title>
 <head>
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
-   <style>
-       .news_events p
-       {
-           font-weight:bold;
-       }
-       #an1{
-           display:none;
-       }
-       </style>
-       <script>
-    
-       #an:hover + .hide {
-       display: block;
-       color: red;
+<title>How to Implement OTP SMS Mobile Verification in PHP with TextLocal</title>
+<link href="style.css" type="text/css" rel="stylesheet" />
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA6ytWG9zYMnyBwyT8BfYJ-1osBo8fWQGY",
+    authDomain: "bank-bbe1e.firebaseapp.com",
+    projectId: "bank-bbe1e",
+    storageBucket: "bank-bbe1e.appspot.com",
+    messagingSenderId: "573436030424",
+    appId: "1:573436030424:web:a6e3a161acb6abba17d6ad",
+    measurementId: "G-W5ZSEDY3NF"
+  };
+
+  // Initialize Firebase
+ 
+
+</script><script>
+ 
+function sendOTP(){
+	const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+	var number = "+919360486602"
+    console.log("entering...")
+	var recaptcha = new app.auth.RecaptchaVerifier('recaptcha')
+	
+	
+	
+	app.auth().signInWithPhoneNumber(number,recaptcha).then(function (e){
+     var code =  window.prompt("Enter a number")
+
+	 if(code ==null) return;
+
+	 e.confrim(code).then(function(result){
+		 console.log(result)
+	 })
+
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-      </script>
-       
 
-   
-   <link rel="stylesheet" type="text/css" href="index.css">
-   <link rel="shortcut icon" href="img/chase.jpg">
-    </head>
- 
+</script></head>
 <body>
-<?php include'header.php'?>
-<div class="index_container">
-    <div class="slider">
-    <div class="slideimg">
-    <img src="img/onbnk.jpg">
-        <img src="img/onbnk.jpg">
-        <img src="img/onbnk.jpg">
-        <img src="img/onbnk.jpg">
-        <img src="img/onbnk.jpg">
-        </div>
-    </div><br>
-    <!-- <div class="newsroom">
-        
-        <marquee class="marquee_news" scrolldelay="20"><p class="newsfeed"><span>Your bank may charge you for closing a bank account. 
-        Bank also charges you when you close your account within a particular time period.</span><span>SBI cuts deposit rates; PPF to fetch lower interest rate. </span><span>No, it is not mandatory to link your bank account with CITIZENSHIP card</span></p></marquee>
-    </div><br><br> -->
-   
 
-    
-<div class="news_events">
-    <h4>Tips | Updates | Events</h4><br>
-        <ul>
-            <p>If you are new to the bank go for open account. If you are an existing user, go for fund transfer or apply debit card.
-            <br><br>
-            if you have any queries regarding usage of website contact our customer care.
- 
+	<div class="container">
+		<div class="error"></div>
+		<form id="frm-mobile-verification">
+			<div class="form-heading">Mobile Number Verification</div>
 
-</p>
-            <br>
-        </ul>
-    </div>
-    
+			<div class="form-row">
+				<input type="number" id="mobile" class="form-input"
+					placeholder="Enter the 10 digit mobile">
+			</div>
 
-    <div class="online_services">
-        <h4>Online Services</h4>
-        <ul>
-            <a href="customer_reg_form.php" id="an"><li>Open Account</li></a>
-            <a href="debit_card_form.php"><li>Apply Debit Card</li></a><br>
-            <a href="#" id="ebanking" ><li><div class="ebanking">Edit Account
-                <div class = "ebanking_options">
-                <ul>
-                    <a href="customer_login.php"><li>Login </li></a>
-                    <a href="#"><li>Log</li>
-                    <a href="ebanking_reg_form.php"><li>Register</li></a>
-                </ul>
-            </div>
-        </div>
-    </li></a>
-            <a href="fund_transfer.php"><li>Fund Transfer</li></a><br>
-        </ul>
-   
-</div>
+			<input type="button" class="btnSubmit" value="Send OTP"
+				onclick="sendOTP()">
+		</form>
+	</div>
 
-        <div id="aboutus" class="about"><span>About Us</span><br><br>
-        <p style="font-weight:bolder;font-size:17px;color: #2c71b0;"> Welcome to our bank - the bank that implements a modern way of banking and will adapt itself to the rapidly changing scenario in the banking industry.It is most useful for the elderly people who struggle working with the website.This
-            Website provides necessary walk throughs for easy access.
-</p></div>
-    
-    <div class="disclaimer">
-    <span>Disclaimer !!</span><br><br>
-        <p style="font-size:17px;font-weight:bold;">Our bank does not ask for the details of your account/PIN/password.<br>
-        Therefore any one pretending to be asking you for information from the bank/technical team may be fraudulent entities, so please beware.</p>
-        
-
-
-    </div>
-    <div id="an1">
-        <p>bxjkencencvhrh</p>
-    </div>
-    
-<?php include 'footer.php';?>
+	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+	
 </body>
-
 </html>
