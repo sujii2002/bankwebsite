@@ -4,99 +4,133 @@
 <head>
     <title>Registration Form</title>
     <link rel="stylesheet" type="text/css" href="css/customer_reg_form.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
 	<?php include'header.php';  ?>
+	<style>
+		.container{
+			width:80%;
+			background-color:white;
+			padding:50px;
+			
+		}
+		
+
+	</style>
+	
+	
+	
     </head>
     <body>
     <div class="container_regfrm_container_parent">
-	<h3>Online Account Opening Form</h3>
-	<div class="container_regfrm_container_parent_child">
-		<form method="post">
-				 <input type="text" name="name" placeholder="Name" required />
-				 <select name ="gender" required >
-					  <option class="default" value="" disabled selected>Gender</option>
-					  <option value="Male" required >Male</option>
-					  <option value="Female">Female</option>
-					  <option value="Others">Others</option>
-				</select>
-				 <input type="text" name="mobile" placeholder="Mobile no" required />
-				 <input type="text" name="email" placeholder="Email id" />
-				 <input type="text" name="landline" placeholder="Landline no" />
-				 <input type="text" name="dob" placeholder="Date of Birth" onfocus="(this.type='date')" required />
-				 <input type="text" name="pan_no" placeholder="PAN Number" required />
-				 <input type="text" name="citizenship" placeholder="Citizenship Number" required />
-				 <input class="address" type="text" name="homeaddrs" placeholder="Home Address" required  />
-				 <input class="address" type="number" name="officeaddrs" placeholder="Reference Account Number" />
-				 <input type="text" name="country" placeholder="US" value="US" readonly="readonly" />
+	<h3>Online Account Opening Form</h3> 
+	<div class="container">
+	<form>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="gender">Gender</label>
+        <select id="gender"name="gender" class="form-control">
+          <option selected value="male">Male</option>
+          <option selected value="female">female</option>
+          <option selected value="others">others</option>
+    
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="mob">Mobile No</label>
+        <input type="text" name="mobile" class="form-control"placeholder="Mobile no" required />
+        
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="land">Landline No</label>    
+            <input type="text" name="landline" placeholder="Landline no"class="form-control"required />    
+      </div>  
+      <div class="form-group col-md-3">
+        <label for="">Date of Birth</label>
+        <input type="text" name="dob" placeholder="Date of Birth" onfocus="(this.type='date')"class="form-control" required />    
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inpu">PAN number</label>
+        <input type="text" name="pan_no" placeholder="PAN_number"class="form-control" required />
+      </div>
 
+      <div class="form-group col-md-3">
+        <label for="mob">Aadhar Card Number</label>
+        <input type="text" name="citizenship" placeholder="Aadhar_no"class="form-control" required />    
+      </div>
+    </div>      
+    <!-- </div> -->
+    <div class="form-group">
+      <label for="inputAddress">Home Address</label>
+      <input type="text" class="form-control" id="inputAddress" name="homeaddrs" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Office Address </label>
+      <input type="text" class="form-control" id="inputAddress2" name="officeadda" placeholder="Apartment, studio, or floor">
+    </div>
+	<!-- </div> -->
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputCountry">Country</label>
+            <input type="text" class="form-control" id="inputCity" name="country" placeholder="India">
+          </div>
+        <div class="form-group col-md-3">
+            <label for="inputState">State</label>
+            <input type="text" class="form-control" id="inputState" name="state" placeholder="TamilNadu">
+          </div>
+        <div class="form-group col-md-3">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity" name="city"  placeholder="City">
+        </div>
+        <div class="form-group col-md-3">
+        <label for="inputZip">Pin Code</label>
+        <input type="text" class="form-control" name="pin" id="inputZip" placeholder="pin-code">
+        </div>     
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputCountry">Area/Locality</label>
+            <input type="text" class="form-control" name="arealoc" id="arealoc" placeholder="area/loality">
+          </div>
+        <div class="form-group col-md-3">
+            <label for="inputState">Nominee Name</label>
+            <input type="text" class="form-control" name="nominee_name" id="nominee" placeholder="Nominee name(if any)"> 
+          </div>
+      <div class="form-group col-md-3">
+        <label for="inputacno">Nominee Account Number</label>
+        <input type="text" class="form-control" id="inputCity" name="nominee_ac_no" placeholder="Nominee Account NO">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="acctype">Account Type</label>
+        <select id="acctype"name="acctype" class="form-control">
+          <option selected value="Joint">Joint</option>
+          <option selected value="single">Single</option>
+      </div>     
+    </div>
+	<div class="border border-light">
+    <div class="col-md-12 text-center">
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </div>
 
-
-				 <select name ="state" required >
-					  <option class="default" value="" disabled selected>State</option>
-					  
-					  <option value="California">California</option>
-					  <option value="Texas">Texas</option>
-					  <option value="Florida">Florida</option>
-					  <option value="Washington">Washington</option>
-					  <option value="Hawaii">Hawaii</option>
-					  <option value="Alaska">Alaska</option>
-					  <option value="Virginia">Virginia</option>
-					  <option value="Idaho">Idaho</option>
-				</select>
-
-
-
-				 <select name ="city" required >
-					  <option class="default" value="" disabled selected>City</option>
-					  <option value="Los Angeles">Los Angeles</option>
-					  <option value="San Diego">San Diego</option>
-					  <option value="Fresno">Fresno</option>
-					  <option value="Houston">Houston</option>
-					  <option value="Austin">Austin</option>
-					  <option value="Dallas">Dallas</option>
-					  <option value="Texas City">Texas City</option>
-					  <option value="Miami">Miami</option>
-					  <option value="Orlando">Orlando</option>
-					  <option value="Jacksonville">Jacksonville</option>
-					  <option value="Seattle">Seattle</option>
-					  <option value="Vancouver">Vancouver</option>
-					  <option value="Olympia">Olympia</option>
-					  <option value="Honolulu">Honolulu</option>
-					  <option value="Hawi">Hawi</option>
-					  <option value="Lahaina">Lahaina</option>
-					  <option value="Anchorage">Anchorage</option>
-					  <option value="Sitka">Sitka</option>
-					  <option value="Seward">Seward</option>
-					  <option value="Richmond">Richmond</option>
-					  <option value="Williamsburg">Williamsburg</option>
-					  <option value="Alexandria">Alexandria</option>
-					  <option value="Boise">Boise</option>
-					  <option value="Twin Falls">Twin Falls</option>
-					  <option value="Moscow">Moscow</option>
-					  
-				</select>
-
-
-
-				 
-				 <input type="text" name="pin" placeholder="Pin Code" required />
-				 <input type="text" name="arealoc" placeholder="Area/Locality" required />
-				 <input type="text" name="nominee_name" placeholder="Nominee Name (If any)" />
-				 <input type="text" name="nominee_ac_no" placeholder="Nominee Account no"  />
-				 
-				 <select name ="acctype" required >
-					  <option class="default" value="" disabled selected>Account Type</option>
-					  <option value="Saving">Saving</option>
-					  <option value="Current">Current</option>
-				</select>
-				<input type="submit" name="submit" value="Submit">
-				</form>
+    
+	
+</form>
          </div>
-		 </div>
-		 
-<?php include'footer.php';?>
+		 </div>		 
     
 </body>
+
 </html>
 
 
